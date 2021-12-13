@@ -1,0 +1,12 @@
+.container-lg{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.table-order{
+    margin-left: 10px;
+
+}
+.table-order .p{
+    display: block;
+}

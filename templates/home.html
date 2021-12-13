@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HOME</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">    
+    <link rel="stylesheet" href="/static/css/home.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+
+    <!-- fontchu -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap" rel="stylesheet">
+
+    <!-- ### JS ### -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="/static/js/home.js"></script>
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  </head>
+   
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>TVK Restaurant</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <p>Dummy Heading</p>
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#">Nhà Hàng</a>
+                        </li>
+                        <li>
+                            <a href="#">Nhân Viên</a>
+                        </li>
+                        <li>
+                            <a href="#">Quản Kho</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/menu">Menu</a>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled CTAs">
+                <li>
+                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+                </li>
+                <li>
+                    <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div class="content" id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <h2 style="text-align: center;">TVK FASTFOOD RESTAURANT</h2>
+
+            <div class="line"></div>
+            
+            <div class="row">
+
+                <div class="col">
+                     <ul class="list-table p-3">
+
+                         {% for i in items %}
+                         <li class="table-1">
+
+                                <button onclick= "checkbn('{{i.table_number}}')" class="icons" id="checkbn">
+
+                                    <i class="fas fa-chair" style="font-size: larger;"></i>
+                                    
+                                </button>
+                                <p>{{i.table_number}}</p>
+                                <button class="btn btn-primary btn-sm" onclick="choose_table('{{i.id}}')">ADD THIS</button>
+                         </li>
+                         {% endfor %}
+                         
+                     </ul>
+
+                </div>
+
+                <script>
+
+                    function checkbn(table_number){
+
+                        $.ajax({
+
+                            url: '/checkbn/' + table_number,
+
+                            type: 'GET',
+
+                            success: function(data){
+
+                                let text = "";
+
+                                let price = "";
+
+                                let total = 0;
+
+                                for (let i = 0; i < data.table_order.length; i++){
+
+                                    text += data.table_order[i] + "<br>";
+
+                                }
+
+                                document.getElementById("do_an").innerHTML = text;
+
+
+                                for (let j = 0; j < data.table_price.length; j++){
+
+                                    total  += data.table_price[j];
+
+                                    price += data.table_price[j] + "<br>";
+
+                                }
+
+                                document.getElementById("gia_price").innerHTML = price;
+
+                                document.getElementById("total").innerHTML = total;
+
+                                
+                            }
+
+                        })
+
+
+                    }
+
+
+
+                    function choose_table(id){
+
+                        $.ajax({
+            
+                            url: '/chon-ban-1' + '/' +  id,
+            
+                            type: 'GET',
+                            
+                            success: function(data){
+                                
+                                window.location.href = '/ban-ordering' ;  
+            
+                            }
+                        })
+                    }
+                </script>
+
+
+                <div class="showmenu col">
+
+                        <p style="display:block; float:left;">ten mon an</p>
+                        <p style="display:block; float:right;">Gia mon an</p>
+
+                    <div class="" style=" overflow:hidden; width:100%; margin-bottom: 20px; ">
+
+                        <div class="do_an" id="do_an" ></div>
+
+                        <div class="gia_price" id="gia_price" ></div>
+
+                    </div>
+
+                    <div class="" style=" overflow: hidden; width:100%; ">
+
+                        <p style="display: block; float:left">Total</p>
+                        <p id="total" style="display: block; float:right">price</p>
+
+                    </div>
+
+
+                </div>
+
+                <!-- <section class="popup">
+        
+                    <div class="modal fade justify-content-center" id="khanhmodal" tabindex="-1" role="dialog" aria-labelledby="tri-pop-up" aria-hidden="true" >
+        
+                        <div class="modal-dialog" role="document">
+        
+                            <div class="modal-content">
+        
+                                <div class="modal-header">
+        
+                                    <h5 style="letter-spacing: 2px" class="modal-title p-3" id="khanhmodal-title"></h5>
+        
+                                    <button style="border:none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+        
+                                        <span aria-hidden="true">&times;</span>
+        
+                                    </button>
+                                        
+                                </div>
+        
+                            </div>
+        
+                        </div>
+        
+                    </div>
+        
+                </section> -->
+
+             </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

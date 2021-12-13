@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HOME</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">    
+    <link rel="stylesheet" href="/static/css/register.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+
+    <!-- fontchu -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap" rel="stylesheet">
+
+    <!-- ### JS ### -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="/static/js/register.js"></script>
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  </head>
+
+<body>
+    <section class="registration">
+
+        <div class="container">
+
+            <div class="row justify-content-center">
+
+                <div class="col-lg-12">
+
+                    <div class="card border-0">
+
+                        <div class="card-body p-0">
+
+                            <div class="row justify-content-center">
+
+                                <div class="col-lg-6 p-5">
+
+                                    <div class="khanh-register-outer">
+
+                                        <div class="alert alert-danger" id="error" style="display:none;"></div>
+
+                                        <form class="registration-form" action="/Register" method="POST">
+                                        
+                                            <div class="form-group">
+
+                                                <label for="email">Email:</label>
+
+                                                <input type="email" name="email" id="email" class="form-control" placeholder="Nhập Email...">
+
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <label for="hovaten">Họ Và Tên:</label>
+
+                                                <input type="text" name="hovaten" id="hovaten" class="form-control" placeholder="Nhập Email...">
+
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <label for="chucvu">Chức Vụ:</label>
+
+                                                <input type="text" name="chucvu" id="chucvu" class="form-control" placeholder="Nhập Email...">
+
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <label for="username">Username:</label>
+
+                                                <input type="text" name="username" id="username" class="form-control" placeholder="Nhập Tài Khoản">
+
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <label for="password">Password:</label>
+
+                                                <input type="password" name="password" id="password" class="form-control" placeholder="Nhập Mật Khẩu">
+
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <label for="password_check">Confirm Password:</label>
+
+                                                <input type="password" name="password_check" id="password_check" class="form-control" placeholder="Nhập Lại Mật Khẩu">
+
+                                            </div>
+
+                                            <div class="row justify-content-center" > 
+
+                                                <button type="submit" class="btn btn-primary">ĐĂNG KÍ</button>
+
+                                            </div>
+                                        
+                                        </form>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+</body>      
