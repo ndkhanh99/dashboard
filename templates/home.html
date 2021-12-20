@@ -144,7 +144,47 @@
 
                 </div>
 
+                <div class="showmenu col">
+
+                    <p style="display:block; float:left;">ten mon an</p>
+                    <p style="display:block; float:right;">Gia mon an</p>
+
+                <div class="" style=" overflow:hidden; width:100%; margin-bottom: 20px; ">
+
+                    <div class="do_an" id="do_an"></div>
+
+                    <div class="gia_price" id="gia_price" ></div>
+
+                </div>
+
+                <div class="" style=" overflow: hidden; width:100%; ">
+
+                    <p style="display: block; float:left">Total</p>
+                    <p id="total" style="display: block; float:right">price</p>
+
+                </div>
+
+                    <div>
+                        <!-- <p id ="so_ban" style="display: block;" ></p> -->
+
+                        <button onclick = "xoaten('{{items[0].table_number}}')" id="so_ban" type="button" class="btn btn-primary">Thanh Toan</button>
+
+                    </div>
+
+
+
+            </div>
+
+
                 <script>
+
+                    function xoaten(table_number){
+
+
+                        console.log(table_number);
+
+                       
+                    }
 
                     function checkbn(table_number){
 
@@ -161,6 +201,7 @@
                                 let price = "";
 
                                 let total = 0;
+
 
                                 for (let i = 0; i < data.table_order.length; i++){
 
@@ -183,15 +224,12 @@
 
                                 document.getElementById("total").innerHTML = total;
 
-                                
                             }
 
                         })
 
 
                     }
-
-
 
                     function choose_table(id){
 
@@ -208,32 +246,14 @@
                             }
                         })
                     }
+
+
                 </script>
 
-
-                <div class="showmenu col">
-
-                        <p style="display:block; float:left;">ten mon an</p>
-                        <p style="display:block; float:right;">Gia mon an</p>
-
-                    <div class="" style=" overflow:hidden; width:100%; margin-bottom: 20px; ">
-
-                        <div class="do_an" id="do_an" ></div>
-
-                        <div class="gia_price" id="gia_price" ></div>
-
-                    </div>
-
-                    <div class="" style=" overflow: hidden; width:100%; ">
-
-                        <p style="display: block; float:left">Total</p>
-                        <p id="total" style="display: block; float:right">price</p>
-
-                    </div>
+               
 
 
-                </div>
-
+                
                 <!-- <section class="popup">
         
                     <div class="modal fade justify-content-center" id="khanhmodal" tabindex="-1" role="dialog" aria-labelledby="tri-pop-up" aria-hidden="true" >

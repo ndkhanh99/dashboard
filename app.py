@@ -250,8 +250,8 @@ def Register():
 @app.route('/' , methods = ['GET'])
 def Home():
     
-        items = Alltable.query.filter().all()
-        
+        items = Alltable.query.filter().all()  
+                    
         return render_template('home.html' , items = items )
 
 
@@ -334,18 +334,19 @@ def checktable(id):
     
     list_price = []
     
+    list_number = []
+    
     table_order = Banso1.query.filter_by(tablenumber = id).all()
     
     for i in table_order:
         
         list_do_an.append(i.product_title)
         list_price.append(i.product_price)
-        
+    
     return jsonify(table_order = list_do_an , table_price = list_price) 
         
           
     
-
 @app.route('/chon-ban-1/<int:id>' , methods = ['GET'])
 @login_required 
 def chonban(id):
@@ -415,7 +416,8 @@ def quanli():
     
     itm = User.query.filter().all()
     
-    return render_template('table_view.html' , itm = itm )
+    return render_template('nhanvien.html' , itm = itm )
+
 
 
 if __name__ == '__main__':
