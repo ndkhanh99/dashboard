@@ -165,25 +165,33 @@
                 </div>
 
                     <div>
-                        <!-- <p id ="so_ban" style="display: block;" ></p> -->
 
-                        <button onclick = "xoaten('{{items[0].table_number}}')" id="so_ban" type="button" class="btn btn-primary"></button>
+                        <button id="so_ban" type="button" class="btn btn-primary"></button>
 
                     </div>
 
+                    <div>
 
+                        <button onclick="xoa_ban('{{so_ban}}')" id="xoa_ban" value="so_ban" class="btn btn-primary">THANH TOAN</button>
+
+                    </div>
 
             </div>
 
 
                 <script>
 
-                    function xoaten(table_number){
+                    function xoa_ban(so_ban){
+                        $.ajax({
+                            url: '/xoa_mon_an/' + so_ban,
+                            type: 'GET',
 
+                            success: function(data){
 
-                        console.log(table_number);
+                                alert(data.message);
 
-                       
+                            }
+                        })
                     }
 
                     function checkbn(table_number){
@@ -202,7 +210,18 @@
 
                                 let total = 0;
 
-                                let so_ban = 0; 
+                                var so_ban = 0; 
+
+                                for (let k = 0; k < 1; k++) {
+
+                                    so_ban += data.x;
+
+                                }
+
+                                document.getElementById("so_ban").innerHTML = so_ban;
+
+                                document.getElementById("xoa_ban").value = so_ban;
+
 
                                 for (let i = 0; i < data.table_order.length; i++){
 
@@ -211,13 +230,6 @@
                                 }
 
                                 document.getElementById("do_an").innerHTML = text;
-
-                                for (let k = 0; k < 1; k++) {
-
-                                    so_ban += data.x; 
-                                }
-
-                                document.getElementById("so_ban").innerHTML = so_ban;
 
 
                                 for (let j = 0; j < data.table_price.length; j++){
@@ -232,9 +244,12 @@
 
                                 document.getElementById("total").innerHTML = total;
 
+
+
                             }
 
                         })
+
 
 
                     }
@@ -258,11 +273,8 @@
 
                 </script>
 
-               
-
-             </div>
-
         </div>
+
     </div>
 
 </body>

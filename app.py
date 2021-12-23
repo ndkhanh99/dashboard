@@ -305,7 +305,7 @@ def add_table():
     
     else:
     
-        return render_template('/add_table.html')
+        return render_template('add_table.html')
 
 #BACKEND CHO TRANG HIEN THI THUC DON 
 
@@ -324,9 +324,7 @@ def menu():
     return render_template('/menu.html' , item = item )
 
 
-#BACKEND CHON BAN
-
-
+#backend hien thi mon an
 @app.route('/checkbn/<int:id>' , methods = ['GET'])
 def checktable(id):
     
@@ -334,19 +332,29 @@ def checktable(id):
     
     list_price = []
     
+    list_can_xoa = []
+    
     x = id 
     
     table_order = Banso1.query.filter_by(tablenumber = id).all()
+    
+    table_need_delete = Alltable.query.filter_by(table_number = id).all()
     
     for i in table_order:
         
         list_do_an.append(i.product_title)
         list_price.append(i.product_price)
-    
-    return jsonify(table_order = list_do_an , table_price = list_price , x = x) 
+        
+    for i in table_need_delete:
+            
+        list_can_xoa.append(i.table_number)
+        
+    print(list_can_xoa)       
+        
+    return jsonify(table_order = list_do_an , table_price = list_price , x = x , list_can_xoa= list_can_xoa) 
         
           
-    
+#BACKEND CHON BAN             
 @app.route('/chon-ban-1/<int:id>' , methods = ['GET'])
 @login_required 
 def chonban(id):
@@ -403,6 +411,23 @@ def add(id):
     return jsonify({'oke':'dada'})
 
 
+#backend thanh toan mon an
+@app.route('/xoa_mon_an/<int:id>', methods = ['GET'] )
+def xoamonan(id):
+    
+    list_mon = []
+    
+    mon_bi_xoa = Banso1.query.filter_by(tablenumber = id).all()
+    
+    for i in mon_bi_xoa:
+        
+        list_mon.append(i.product_title)
+        print(list_mon)
+    
+    
+    return jsonify({'message':'ok'})
+
+
 @app.route('/ban-ordering')
 @login_required
 def ordering():
@@ -410,6 +435,8 @@ def ordering():
     items = Item.query.filter().all()
     
     return render_template('ban1.html' , items = items )
+
+
 
 @app.route('/hosonhanvien')
 def quanli():
