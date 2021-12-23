@@ -167,7 +167,7 @@
                     <div>
                         <!-- <p id ="so_ban" style="display: block;" ></p> -->
 
-                        <button onclick = "xoaten('{{items[0].table_number}}')" id="so_ban" type="button" class="btn btn-primary">Thanh Toan</button>
+                        <button onclick = "xoaten('{{items[0].table_number}}')" id="so_ban" type="button" class="btn btn-primary"></button>
 
                     </div>
 
@@ -202,14 +202,22 @@
 
                                 let total = 0;
 
+                                let so_ban = 0; 
 
                                 for (let i = 0; i < data.table_order.length; i++){
 
                                     text += data.table_order[i] + "<br>";
-
+ 
                                 }
 
                                 document.getElementById("do_an").innerHTML = text;
+
+                                for (let k = 0; k < 1; k++) {
+
+                                    so_ban += data.x; 
+                                }
+
+                                document.getElementById("so_ban").innerHTML = so_ban;
 
 
                                 for (let j = 0; j < data.table_price.length; j++){
@@ -251,36 +259,6 @@
                 </script>
 
                
-
-
-                
-                <!-- <section class="popup">
-        
-                    <div class="modal fade justify-content-center" id="khanhmodal" tabindex="-1" role="dialog" aria-labelledby="tri-pop-up" aria-hidden="true" >
-        
-                        <div class="modal-dialog" role="document">
-        
-                            <div class="modal-content">
-        
-                                <div class="modal-header">
-        
-                                    <h5 style="letter-spacing: 2px" class="modal-title p-3" id="khanhmodal-title"></h5>
-        
-                                    <button style="border:none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
-        
-                                        <span aria-hidden="true">&times;</span>
-        
-                                    </button>
-                                        
-                                </div>
-        
-                            </div>
-        
-                        </div>
-        
-                    </div>
-        
-                </section> -->
 
              </div>
 

@@ -334,7 +334,7 @@ def checktable(id):
     
     list_price = []
     
-    list_number = []
+    x = id 
     
     table_order = Banso1.query.filter_by(tablenumber = id).all()
     
@@ -343,7 +343,7 @@ def checktable(id):
         list_do_an.append(i.product_title)
         list_price.append(i.product_price)
     
-    return jsonify(table_order = list_do_an , table_price = list_price) 
+    return jsonify(table_order = list_do_an , table_price = list_price , x = x) 
         
           
     
