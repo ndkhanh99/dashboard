@@ -324,6 +324,18 @@ def menu():
     return render_template('/menu.html' , item = item )
 
 
+@app.route('/delete_table')
+def delete_table():
+    
+    value = request.args.get('table_num_chose')
+    
+    Banso1.query.filter_by(tablenumber = value).delete()
+    
+    db.session.commit()
+    
+    return jsonify({'msg':'Delete Successful'})
+
+
 #backend hien thi mon an
 @app.route('/checkbn/<int:id>' , methods = ['GET'])
 def checktable(id):

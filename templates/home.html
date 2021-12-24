@@ -166,13 +166,7 @@
 
                     <div>
 
-                        <button id="so_ban" type="button" class="btn btn-primary"></button>
-
-                    </div>
-
-                    <div>
-
-                        <button onclick="xoa_ban('{{so_ban}}')" id="xoa_ban" value="so_ban" class="btn btn-primary">THANH TOAN</button>
+                        <button onclick="delete_table()" id="xoa_ban" value="so_ban" class="btn btn-primary">THANH TOAN</button>
 
                     </div>
 
@@ -181,17 +175,39 @@
 
                 <script>
 
-                    function xoa_ban(so_ban){
+                    function delete_table(){
+
+                        var takinginput = document.getElementById("xoa_ban");
+                        var table_num = takinginput.value;
+
                         $.ajax({
-                            url: '/xoa_mon_an/' + so_ban,
-                            type: 'GET',
 
-                            success: function(data){
+                            data:{
 
-                                alert(data.message);
+                                table_num_chose: table_num,
+
+                            },
+
+                            type:'GET',
+
+                            url:'/delete_table',
+
+
+                        })
+
+                        .done(function(data){
+
+                            if(data.msg){
+
+                                alert('delete finish');
+
+                                location.reload();
 
                             }
-                        })
+                            
+
+                        });
+
                     }
 
                     function checkbn(table_number){
